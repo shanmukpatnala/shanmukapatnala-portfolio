@@ -1,0 +1,13 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+
+client/dist/
+dist/
+
+*.log
+client/*.log
+
+tmp-edge-profile/
+.env
+.env.*

@@ -1,0 +1,115 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [ 5 0 R ] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R /Annots [ 7 0 R 8 0 R 9 0 R ] >>
+endobj
+6 0 obj
+<< /Length 6717 >>
+stream
+BT /F2 22 Tf 0.03 0.08 0.15 rg 42.00 799.89 Td (Shanmuka Sai Manikanta Patnala) Tj ET
+BT /F2 11.4 Tf 0.06 0.37 0.56 rg 42.00 771.73 Td (Full Stack Developer | Java Developer | AI Enthusiast) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 42.00 755.14 Td (Phone: ) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 72.91 755.14 Td (9505510317) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 117.07 755.14 Td (   ) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 130.32 755.14 Td (Email: ) Tj ET
+BT /F1 9.2 Tf 0.03 0.35 0.55 rg 161.23 755.14 Td (shanmukpatnala13@gmail.com) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 42.00 743.36 Td (Github: ) Tj ET
+BT /F1 9.2 Tf 0.03 0.35 0.55 rg 77.33 743.36 Td (github.com/shanmukpatnala) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 187.73 743.36 Td (   ) Tj ET
+BT /F1 9.2 Tf 0.20 0.25 0.32 rg 200.98 743.36 Td (Linkedin: ) Tj ET
+BT /F1 9.2 Tf 0.03 0.35 0.55 rg 245.14 743.36 Td (linkedin.com/in/shanmuka-patnala-b752b430b) Tj ET
+0.06 0.37 0.56 RG 1.3 w 42.00 735.59 m 553.28 735.59 l S
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 721.59 Td (PROFESSIONAL SUMMARY) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 712.15 m 553.28 712.15 l S
+BT /F1 9.6 Tf 0.15 0.20 0.28 rg 42.00 701.15 Td (Passionate Full Stack Developer focused on building modern, scalable, and user-friendly web applications.) Tj ET
+BT /F1 9.6 Tf 0.15 0.20 0.28 rg 42.00 686.75 Td (Strong foundation in React.js, Node.js, Java, REST APIs, Firebase, databases, and AI/ML fundamentals.) Tj ET
+BT /F1 9.6 Tf 0.15 0.20 0.28 rg 42.00 672.35 Td (Interested in solving real-world problems through clean code, practical design, and continuous learning.) Tj ET
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 653.95 Td (TECHNICAL SKILLS) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 644.51 m 553.28 644.51 l S
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 633.51 Td (Languages) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 633.51 Td (C, Java, Python, JavaScript \(ES6+\)) Tj ET
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 620.51 Td (Frontend) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 620.51 Td (HTML5, CSS3, React.js, responsive web design) Tj ET
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 607.51 Td (Backend) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 607.51 Td (Node.js, Express.js, REST APIs, JSON, HTTP methods, Firebase basics) Tj ET
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 594.51 Td (Databases) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 594.51 Td (SQL, MySQL, PostgreSQL/SQLite, Firebase Firestore, Realtime Database, Supabase) Tj ET
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 581.51 Td (AI/ML) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 581.51 Td (AI basics, machine learning basics, CNN, NLP, prompt engineering) Tj ET
+BT /F2 9.4 Tf 0.06 0.09 0.16 rg 42.00 568.51 Td (Tools) Tj ET
+BT /F1 9.4 Tf 0.16 0.21 0.29 rg 180.00 568.51 Td (Git, GitHub, VS Code, Android Studio, Firebase Hosting, Vercel, Azure DevOps) Tj ET
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 551.51 Td (PROJECTS) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 542.07 m 553.28 542.07 l S
+BT /F2 10.4 Tf 0.06 0.09 0.16 rg 42.00 531.07 Td (Bridging Risk and Innovation Generative AI) Tj ET
+BT /F2 9.4 Tf 0.20 0.28 0.38 rg 42.00 518.07 Td (Generative AI scenario generation system) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 506.03 Td (- Developed a GPT-2 based scenario generation system to automate future forecasting and decision-making.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 494.13 Td (- Built an end-to-end NLP pipeline with prompt processing, preprocessing, and BPE tokenization.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 482.23 Td (- Implemented generation, filtering, evaluation, and output rendering modules.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 470.32 Td (- Integrated ethical AI filtering to reduce bias, hallucination, and unsafe content.) Tj ET
+BT /F2 9.1 Tf 0.15 0.20 0.28 rg 50.00 458.42 Td (Tech Stack: GPT-2, HuggingFace Transformers, Scikit-learn, Pandas, NumPy) Tj ET
+BT /F2 10.4 Tf 0.06 0.09 0.16 rg 42.00 441.77 Td (Facial Recognition Based Attendance System) Tj ET
+BT /F2 9.4 Tf 0.20 0.28 0.38 rg 42.00 428.77 Td (Real-time attendance platform using computer vision) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 416.74 Td (- Engineered a real-time attendance system using MobileNet and Tiny Face Detector.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 404.83 Td (- Developed a scalable full-stack application using React.js, Node.js, Firebase, and REST APIs.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 392.93 Td (- Implemented face embeddings and distance-based matching for identity verification.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 381.02 Td (- Built secure role-based access control for Admin, Faculty, and Student users.) Tj ET
+BT /F2 9.1 Tf 0.15 0.20 0.28 rg 50.00 369.12 Td (Tech Stack: React.js, Node.js, Firebase, REST APIs, Computer Vision) Tj ET
+BT /F2 10.4 Tf 0.06 0.09 0.16 rg 42.00 352.47 Td (Project Task Manager) Tj ET
+BT /F2 9.4 Tf 0.20 0.28 0.38 rg 42.00 339.47 Td (Responsive task management web application) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 327.44 Td (- Developed task tracking features with React.js and Firebase.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 315.53 Td (- Implemented real-time data handling and authentication using Firebase Firestore and Firebase Auth.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 303.63 Td (- Designed modular components and admin features to support user management and scalability.) Tj ET
+BT /F2 9.1 Tf 0.15 0.20 0.28 rg 50.00 291.73 Td (Tech Stack: React.js, Vite, Firebase Firestore, Firebase Auth) Tj ET
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 274.08 Td (EXPERIENCE) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 264.64 m 553.28 264.64 l S
+BT /F2 10.4 Tf 0.06 0.09 0.16 rg 42.00 253.64 Td (Software Developer Intern - Linkerr.in) Tj ET
+BT /F1 9.2 Tf 0.40 0.45 0.53 rg 473.79 253.64 Td (Jan 2026 - Present) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 240.64 Td (- Gaining hands-on experience and contributing to real-world software development tasks.) Tj ET
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 228.73 Td (- Working across frontend and backend development workflows.) Tj ET
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 212.83 Td (EDUCATION) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 203.39 m 553.28 203.39 l S
+BT /F2 10.4 Tf 0.06 0.09 0.16 rg 42.00 192.39 Td (DRK Institute of Science and Technology) Tj ET
+BT /F1 9.2 Tf 0.40 0.45 0.53 rg 504.70 192.39 Td (2022 - 2026) Tj ET
+BT /F2 9.4 Tf 0.20 0.28 0.38 rg 42.00 179.39 Td (B.Tech, Computer Science Engineering \(AI & ML\)) Tj ET
+BT /F2 10.5 Tf 0.05 0.09 0.16 rg 42.00 163.36 Td (PROFESSIONAL SKILLS) Tj ET
+0.82 0.86 0.91 RG 0.8 w 42.00 153.92 m 553.28 153.92 l S
+BT /F1 9.3 Tf 0.16 0.21 0.29 rg 50.00 142.92 Td (- Problem solving, debugging, time management, adaptability, team collaboration, and fast learning.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [161.23 752.14 276.05 764.34] /Border [0 0 0] /A << /S /URI /URI (mailto:shanmukpatnala13@gmail.com) >> >>
+endobj
+8 0 obj
+<< /Type /Annot /Subtype /Link /Rect [77.33 740.36 187.73 752.56] /Border [0 0 0] /A << /S /URI /URI (https://github.com/shanmukpatnala) >> >>
+endobj
+9 0 obj
+<< /Type /Annot /Subtype /Link /Rect [245.14 740.36 430.61 752.56] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/in/shanmuka-patnala-b752b430b/) >> >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000117 00000 n 
+0000000187 00000 n 
+0000000262 00000 n 
+0000000434 00000 n 
+0000007203 00000 n 
+0000007362 00000 n 
+0000007520 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+7701
+%%EOF
