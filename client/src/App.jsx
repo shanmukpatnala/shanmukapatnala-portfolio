@@ -1,25 +1,71 @@
 import React, {useEffect, useRef, useState} from 'react'
 
-const Typing = ({words, speed=80})=>{
+const Icon = ({name, size=18}) => {
+  const paths = {
+    projects: <><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></>,
+    download: <><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></>,
+    contact: <><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M8 9h8M8 13h5"/></>,
+    email: <><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></>,
+    phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>,
+    whatsapp: <><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8A8.5 8.5 0 0 1 12.5 20a8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 1 1 17 0z"/><path d="M9 8.5c.5 2.5 2 4 4.5 5l1.5-1"/></>,
+    linkedin: <><rect x="3" y="9" width="4" height="12"/><path d="M5 3.5v.01"/><path d="M11 21V9h4v2c1-2 6-3 6 3v7"/><circle cx="5" cy="4" r="1"/></>,
+    github: <><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19.3 1S18.2.7 15 2.5a13.4 13.4 0 0 0-7 0C4.8.7 3.7 1 3.7 1A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"/><path d="M8 19c-3 .9-3-1.5-4-2"/></>,
+    send: <><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></>,
+    user: <><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></>,
+    message: <><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></>,
+  }
+
+  return (
+    <svg className="icon" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {paths[name]}
+    </svg>
+  )
+}
+
+const Typing = ({words, speed=80, hold=5000})=>{
   const [text, setText] = useState('')
-  const wi = useRef(0); const ci = useRef(0); const forward = useRef(true)
+  const wi = useRef(0)
+  const ci = useRef(0)
+  const forward = useRef(true)
+
   useEffect(()=>{
-    let mounted=true
+    let timer
+
     function tick(){
       const cur = words[wi.current]
-      if(forward.current){ ci.current++; if(ci.current>cur.length){ forward.current=false; setTimeout(tick,800); return }}
-      else { ci.current--; if(ci.current<0){ forward.current=true; wi.current=(wi.current+1)%words.length }}
-      if(mounted) setText(cur.slice(0,ci.current))
-      setTimeout(tick, forward.current?speed:40)
+
+      if (forward.current) {
+        ci.current += 1
+        setText(cur.slice(0, ci.current))
+
+        if (ci.current === cur.length) {
+          forward.current = false
+          timer = setTimeout(tick, hold)
+          return
+        }
+      } else {
+        ci.current -= 1
+        setText(cur.slice(0, ci.current))
+
+        if (ci.current === 0) {
+          forward.current = true
+          wi.current = (wi.current + 1) % words.length
+          timer = setTimeout(tick, 350)
+          return
+        }
+      }
+
+      timer = setTimeout(tick, forward.current ? speed : 40)
     }
+
     tick()
-    return ()=>mounted=false
-  },[words,speed])
+    return ()=>clearTimeout(timer)
+  },[words,speed,hold])
+
   return <span>{text}<span className="cursor">|</span></span>
 }
 
 export default function App(){
-  const fullName = 'Shanmuka Sai Manikanta Patnala'
   const shortName = 'Shanmuka Patnala'
   const phone = '9505510317'
   const whatsapp = 'https://wa.me/919505510317'
@@ -33,7 +79,7 @@ export default function App(){
   }
   const profileImage = './profile.jpeg'
   const fallbackImage = 'https://via.placeholder.com/140x140.png?text=Photo'
-  const words=['Full Stack Developer','Java Developer','Problem Solver','AI Enthusiast']
+  const words=['AI Enthusiast','Machine Learning Engineer','Frontend Developer','Software Developer','Full Stack Developer','Mobile App Developer','Problem Solver','Technical Support Engineer']
   const skillGroups = [
     {
       title:'AI & Data',
@@ -166,22 +212,57 @@ export default function App(){
           <canvas ref={canvasRef} id="hero-canvas" className="hero-canvas"></canvas>
           <div className="hero-content container">
             <div className="hero-left">
-              <h1 className="name">{fullName}</h1>
+              <h1 className="name">{shortName}</h1>
               <p className="subtitle">Full Stack Developer</p>
               <p className="tagline">Building Future with Code</p>
               <p className="rotating">I am <Typing words={words} /></p>
-              <div className="hero-ctas"><a className="btn primary" href="#projects">View Projects</a><a className="btn outline" href="./resume.pdf" download>Download Resume</a><a className="btn" href="#contact">Contact Me</a></div>
+              <div className="hero-ctas"><a className="btn primary" href="#projects"><Icon name="projects"/>View Projects</a><a className="btn outline" href="./resume.pdf" download><Icon name="download"/>Download Resume</a><a className="btn" href="#contact"><Icon name="contact"/>Contact Me</a></div>
             </div>
-            <div className="hero-right"><div className="profile-card glass"><div className="avatar"><img src={profileImage} alt={shortName} onError={(e)=>{ e.currentTarget.src = fallbackImage }}/></div><h3>{shortName}</h3><p>Full Stack Developer • Intern</p><div className="stats"><span>Intern at Linkerr.in</span><span>B.Tech CSE (AI &amp; ML)</span><span>Grad 2026</span></div></div></div>
+            <div className="hero-right"><div className="profile-card glass"><div className="avatar"><img src={profileImage} alt={shortName} onError={(e)=>{ e.currentTarget.src = fallbackImage }}/></div><h3>{shortName}</h3><p className="profile-role">Full Stack Developer</p><div className="stats"><span>Intern at Linkerr.in</span><span>Fresher</span><span>B.Tech CSE (AI &amp; ML)</span><span>Grad 2026</span></div></div></div>
           </div>
         </section>
 
         <section id="about" className="section about container fade-up"><h2>About Me</h2>
           <div className="about-grid">
-            <div className="about-text card glass"><p>Hi, I’m {fullName}, a passionate Full Stack Developer focused on building modern, scalable, and user-friendly web applications. I enjoy turning ideas into real digital solutions through clean code and creative design. Currently, I am continuously learning and improving my skills in both frontend and backend technologies to become an industry-ready developer.</p></div>
+            <div className="about-text card glass">
+              <p>Hi, I’m {shortName}, a versatile software professional interested in development, AI/ML, mobile applications, problem solving, and technical support. I enjoy learning quickly, understanding real-world requirements, and turning ideas or technical challenges into practical, user-friendly solutions.</p>
+              <div className="role-focus">
+                <div className="role-focus-item">
+                  <span className="role-focus-icon">01</span>
+                  <div><h4>Software Development</h4><p>Building responsive frontend, full-stack, and mobile application experiences with clean and maintainable code.</p></div>
+                </div>
+                <div className="role-focus-item">
+                  <span className="role-focus-icon">02</span>
+                  <div><h4>AI &amp; Machine Learning</h4><p>Exploring intelligent solutions through AI tools, machine learning fundamentals, data analysis, and continuous experimentation.</p></div>
+                </div>
+                <div className="role-focus-item">
+                  <span className="role-focus-icon">03</span>
+                  <div><h4>Problem Solving &amp; Support</h4><p>Diagnosing issues, communicating clearly, and providing dependable technical solutions with a user-first approach.</p></div>
+                </div>
+              </div>
+              <div className="career-highlights">
+                <div>
+                  <span className="career-label">What I Bring</span>
+                  <h4>Ready to learn, contribute, and grow</h4>
+                  <p>I’m looking for an opportunity where I can apply my technical foundation, collaborate with an experienced team, and take ownership of meaningful work.</p>
+                </div>
+                <ul>
+                  <li>Fast learner</li>
+                  <li>Team collaboration</li>
+                  <li>Clear communication</li>
+                  <li>Adaptable mindset</li>
+                </ul>
+              </div>
+            </div>
             <div className="profile-quick card glass">
               <h3>Quick Profile</h3>
               <ul><li>Current Intern at Linkerr.in</li><li>B.Tech CSE (AI &amp; ML)</li><li>Graduation: 2026</li><li>Fast Learner</li><li>Team Player</li></ul>
+              <div className="target-roles">
+                <h4>Target Roles</h4>
+                <div className="role-tags">
+                  {words.map(role => <span key={role}>{role}</span>)}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -225,7 +306,7 @@ export default function App(){
                     <span>GPT-2</span><span>HuggingFace</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
                   </div>
                   <div className="project-actions">
-                    <a className="repo-link" href={repositories.generativeAi} target="_blank" rel="noreferrer">GitHub Repository</a>
+                    <a className="repo-link" href={repositories.generativeAi} target="_blank" rel="noreferrer"><Icon name="github"/>GitHub Repository</a>
                   </div>
                 </div>
               </div>
@@ -246,7 +327,7 @@ export default function App(){
                     <span>React.js</span><span>Node.js</span><span>Firebase</span><span>REST APIs</span><span>Computer Vision</span>
                   </div>
                   <div className="project-actions">
-                    <a className="repo-link" href={repositories.attendance} target="_blank" rel="noreferrer">GitHub Repository</a>
+                    <a className="repo-link" href={repositories.attendance} target="_blank" rel="noreferrer"><Icon name="github"/>GitHub Repository</a>
                   </div>
                 </div>
               </div>
@@ -265,7 +346,7 @@ export default function App(){
                     <span>React.js</span><span>Vite</span><span>Firestore</span><span>Firebase Auth</span>
                   </div>
                   <div className="project-actions">
-                    <a className="repo-link" href={repositories.taskManager} target="_blank" rel="noreferrer">GitHub Repository</a>
+                    <a className="repo-link" href={repositories.taskManager} target="_blank" rel="noreferrer"><Icon name="github"/>GitHub Repository</a>
                   </div>
                 </div>
               </div>
@@ -295,12 +376,12 @@ export default function App(){
         <section id="contact" className="section contact container fade-up"><h2>Contact</h2>
           <div className="contact-grid">
             <form onSubmit={handleSubmit} className="contact-form card glass">
-              <label>Name<input name="name" required/></label>
-              <label>Email<input name="email" type="email" required/></label>
-              <label>Message<textarea name="message" rows={5} required/></label>
-              <div className="form-ctas"><button className="btn primary" type="submit">Send Message</button></div>
+              <label><span className="label-text"><Icon name="user"/>Name</span><input name="name" required/></label>
+              <label><span className="label-text"><Icon name="email"/>Email</span><input name="email" type="email" required/></label>
+              <label><span className="label-text"><Icon name="message"/>Message</span><textarea name="message" rows={5} required/></label>
+              <div className="form-ctas"><button className="btn primary" type="submit"><Icon name="send"/>Send Message</button></div>
             </form>
-            <div className="contact-info card glass"><h3>Get in touch</h3><p>Email: <a href={`mailto:${email}`}>{email}</a></p><p>Phone: <a href={`tel:${phone}`}>{phone}</a></p><p>WhatsApp: <a href={whatsapp} target="_blank" rel="noreferrer">{phone}</a></p><p>LinkedIn: <a href={linkedin} target="_blank" rel="noreferrer">shanmuka-patnala</a></p><p>GitHub: <a href={github} target="_blank" rel="noreferrer">shanmukpatnala</a></p></div>
+            <div className="contact-info card glass"><h3>Get in touch</h3><p><Icon name="email"/><span>Email:</span><a href={`mailto:${email}`}>{email}</a></p><p><Icon name="phone"/><span>Phone:</span><a href={`tel:${phone}`}>{phone}</a></p><p><Icon name="whatsapp"/><span>WhatsApp:</span><a href={whatsapp} target="_blank" rel="noreferrer">{phone}</a></p><p><Icon name="linkedin"/><span>LinkedIn:</span><a href={linkedin} target="_blank" rel="noreferrer">shanmuka-patnala</a></p><p><Icon name="github"/><span>GitHub:</span><a href={github} target="_blank" rel="noreferrer">shanmukpatnala</a></p></div>
           </div>
         </section>
       </main>

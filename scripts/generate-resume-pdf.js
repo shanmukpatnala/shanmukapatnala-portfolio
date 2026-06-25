@@ -156,7 +156,7 @@ function skill(label, value) {
 function buildResume() {
   beginPage();
 
-  textLine('Shanmuka Sai Manikanta Patnala', margin, 22, bold, '0.03 0.08 0.15');
+  textLine('Shanmuka Patnala', margin, 22, bold, '0.03 0.08 0.15');
   textLine('Full Stack Developer | Java Developer | AI Enthusiast', margin, 11.4, bold, '0.06 0.37 0.56');
   y -= 2;
   inlineLine([
