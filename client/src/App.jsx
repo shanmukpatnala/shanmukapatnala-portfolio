@@ -28,7 +28,7 @@ export default function App(){
   const linkedin = 'https://www.linkedin.com/in/shanmuka-patnala-b752b430b/'
   const repositories = {
     generativeAi: `${github}/bridging-risk-and-innovation-generative-ai`,
-    attendance: `${github}/facial-recognition-attendance-system`,
+    attendance: `${github}/Drk-Attendance-System`,
     taskManager: `${github}/project-task-manager`,
   }
   const profileImage = './profile.jpeg'
@@ -157,7 +157,7 @@ export default function App(){
       <header className="nav-wrap">
         <nav className="nav container sticky">
           <a className="brand" href="#hero">{shortName}</a>
-          <ul className="nav-links"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
+          <ul className="nav-links"><li><a href="#hero">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
         </nav>
       </header>
 
