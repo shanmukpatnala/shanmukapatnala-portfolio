@@ -79,53 +79,54 @@ export default function App(){
   }
   const profileImage = './profile.jpeg'
   const fallbackImage = 'https://via.placeholder.com/140x140.png?text=Photo'
-  const words=['AI Enthusiast','Machine Learning Engineer','Frontend Developer','Software Developer','Full Stack Developer','Mobile App Developer','Problem Solver','Technical Support Engineer']
+  const targetRoles = ['AI Enthusiast','Machine Learning Engineer','Frontend Developer','Software Developer','Full Stack Developer','Mobile App Developer','QA Engineer','React Native Developer']
+  const words = ["I'm an AI Enthusiast","I'm an Machine Learning Engineer","I'm an Frontend Developer","I'm an Software Developer","I'm an Full Stack Developer","I'm an Mobile App Developer","I'm an QA Engineer","I'm an React Native Developer"]
   const skillGroups = [
     {
       title:'AI & Data',
       skills:[
-        {name:'Artificial Intelligence (AI)',details:'Basics, model usage, prompt engineering'},
-        {name:'Machine Learning (Basics)',details:'Deep learning (CNN), natural language processing (NLP)'},
-        {name:'Analytical Skills',details:'Data interpretation, debugging'},
-        {name:'AI Tools',details:'ChatGPT, Google Gemini, Claude, GitHub Copilot'},
+        {name:'Artificial Intelligence',level:85},
+        {name:'Machine Learning',level:78},
+        {name:'Prompt Engineering',level:82},
+        {name:'AI Tools',level:88},
       ],
     },
     {
       title:'Frontend',
       skills:[
-        {name:'HTML/CSS',details:'Responsive web design'},
-        {name:'JavaScript (ES6+)',details:'Modern JavaScript fundamentals'},
-        {name:'React.js',details:'Component-based user interfaces'},
-        {name:'Web Development',details:'Frontend and backend basics'},
+        {name:'HTML/CSS',level:92},
+        {name:'JavaScript',level:85},
+        {name:'React.js',level:85},
+        {name:'Responsive Design',level:88},
       ],
     },
     {
       title:'Programming & Backend',
       skills:[
-        {name:'Programming Languages',details:'C, Java, Python'},
-        {name:'Data Structures & Algorithms',details:'Basics'},
-        {name:'Logic Programming',details:'Problem-solving fundamentals'},
-        {name:'Backend',details:'Node.js, Express.js, Firebase Console basics'},
-        {name:'API Development',details:'REST APIs, JSON, HTTP methods'},
+        {name:'Python',level:75},
+        {name:'Java',level:78},
+        {name:'Node.js',level:70},
+        {name:'REST APIs',level:80},
+        {name:'DSA Basics',level:72},
       ],
     },
     {
       title:'Database & Tools',
       skills:[
-        {name:'Database',details:'SQL, MySQL, PostgreSQL/SQLite, Firebase Firestore, Realtime Database, Supabase'},
-        {name:'Authentication',details:'Firebase authentication'},
-        {name:'Deployment',details:'Firebase Hosting, Vercel'},
-        {name:'Version Control',details:'Git, GitHub branching, merging, pull requests'},
-        {name:'DevOps & Project Management',details:'Azure DevOps boards, repos, work items'},
-        {name:'Tools',details:'VS Code, Android Studio, Microsoft Word, PowerPoint'},
+        {name:'SQL / MySQL',level:76},
+        {name:'Firebase',level:82},
+        {name:'Git & GitHub',level:85},
+        {name:'Deployment',level:78},
+        {name:'VS Code',level:90},
       ],
     },
     {
       title:'Professional Skills',
       skills:[
-        {name:'Problem Solving',details:'Algorithms, optimization'},
-        {name:'Self-Management',details:'Time management, adaptability'},
-        {name:'Computer Literacy',details:'General computing and productivity tools'},
+        {name:'Problem Solving',level:86},
+        {name:'Team Work',level:88},
+        {name:'Communication',level:84},
+        {name:'Adaptability',level:90},
       ],
     },
   ]
@@ -214,8 +215,8 @@ export default function App(){
             <div className="hero-left">
               <h1 className="name">{shortName}</h1>
               <p className="subtitle">Full Stack Developer</p>
-              <p className="tagline">Building Future with Code</p>
-              <p className="rotating">I am <Typing words={words} /></p>
+              <p className="tagline">Building the Future with Code</p>
+              <p className="rotating"><Typing words={words} /></p>
               <div className="hero-ctas"><a className="btn primary" href="#projects"><Icon name="projects"/>View Projects</a><a className="btn outline" href="./resume.pdf" download><Icon name="download"/>Download Resume</a><a className="btn" href="#contact"><Icon name="contact"/>Contact Me</a></div>
             </div>
             <div className="hero-right"><div className="profile-card glass"><div className="avatar"><img src={profileImage} alt={shortName} onError={(e)=>{ e.currentTarget.src = fallbackImage }}/></div><h3>{shortName}</h3><p className="profile-role">Full Stack Developer</p><div className="stats"><span>Intern at Linkerr.in</span><span>Fresher</span><span>B.Tech CSE (AI &amp; ML)</span><span>Grad 2026</span></div></div></div>
@@ -247,7 +248,7 @@ export default function App(){
                   <p>I’m looking for an opportunity where I can apply my technical foundation, collaborate with an experienced team, and take ownership of meaningful work.</p>
                 </div>
                 <ul>
-                  <li>Fast learner</li>
+                  <li>Problem solver</li>
                   <li>Team collaboration</li>
                   <li>Clear communication</li>
                   <li>Adaptable mindset</li>
@@ -260,7 +261,7 @@ export default function App(){
               <div className="target-roles">
                 <h4>Target Roles</h4>
                 <div className="role-tags">
-                  {words.map(role => <span key={role}>{role}</span>)}
+                  {targetRoles.map(role => <span key={role}>{role}</span>)}
                 </div>
               </div>
             </div>
@@ -272,10 +273,16 @@ export default function App(){
             {skillGroups.map(group => (
               <div className="skill-card card glass detailed-skill-card" key={group.title}>
                 <h4>{group.title}</h4>
-                <div className="skill-list">
+                <div className="skill-list" aria-label={`${group.title} progress`}>
                   {group.skills.map(skill => (
                     <div className="skill-row" key={skill.name}>
-                      <strong>{skill.name}:</strong> {skill.details}
+                      <div className="skill-head">
+                        <span className="skill-name">{skill.name}</span>
+                        <span className="skill-value">{skill.level}%</span>
+                      </div>
+                      <div className="skill-progress" aria-hidden="true">
+                        <span style={{'--w':`${skill.level}%`}}></span>
+                      </div>
                     </div>
                   ))}
                 </div>
